@@ -1,22 +1,13 @@
-$(() => {
-  $("#open").click(() => {
-    const songs = $("#song").val().split(" ");
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("open").addEventListener("click", function () {
+    const songs = document.getElementById("song").value.split(" ");
     for (const song of songs) {
       const s = parseInt(song);
       if (Number.isInteger(s)) {
-        const url = "https://book.watv.org/newsong/newsong" + s + "/";
-        const result = openUrl(url);
-        if (!result) return;
-      }
-    }
-  });
-
-  $("#appendix-open").click(() => {
-    const songs = $("#appendix-song").val().split(" ");
-    for (const song of songs) {
-      const s = parseInt(song);
-      if (Number.isInteger(s)) {
-        const url = "https://book.watv.org/newsong/newsong-appendix" + s + "/";
+        const url =
+          "https://book.watv.org/newsong/newsong" +
+          (song[0] === "0" ? "-appx00" + s : s) +
+          "/";
         const result = openUrl(url);
         if (!result) return;
       }
