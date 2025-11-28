@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("open").addEventListener("click", function () {
-    const songs = document.getElementById("song").value.split(" ");
+    const songs = document
+      .getElementById("song")
+      .value.replaceAll(",", " ")
+      .split(" ");
     for (const song of songs) {
       const s = parseInt(song);
       if (Number.isInteger(s)) {

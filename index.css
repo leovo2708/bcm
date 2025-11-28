@@ -11,11 +11,6 @@ body {
   padding: 20px 0;
 }
 
-label {
-  font-size: 24px;
-  font-weight: bold;
-}
-
 input {
   width: 320px;
 }
